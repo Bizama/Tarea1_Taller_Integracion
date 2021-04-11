@@ -1,0 +1,31 @@
+<h1>{{ name }}</h1>
+<body>
+    <form action="{% url 'consume_api:search_result' %}" method="get">
+        <input type="text" name="query" placeholder="Buscar personaje...">
+        <button type="submit" name="button"> Buscar</button>
+    </form>
+</body>
+<img src={{ img }}>
+
+<li> Ocupacion: </li>
+{% for oc in occupation %}
+<ul> {{ oc }} </ul>
+{% endfor %}
+<li> Status: {{ status }}</li>
+<li> Nickname: {{ nickname }}</li>
+<li> Appearances:</li>
+{% for ap in appearance%}
+<a href="{% url 'consume_api:breakingseason' ap %}"> {{ ap }}</a>
+{% endfor %}
+<li> portrayed: {{ portrayed }}</li>
+<li> category: {{ category }}</li>
+<li> better_call_saul_appearance:</li>
+{% for aps in better_call_saul_appearance%}
+<a href="{% url 'consume_api:saulseason' aps %}"> {{ aps }}</a>
+{% endfor %}
+<li> Quotes:
+    {% for quote in quotes%}
+     <ul>{{ quote.quote }}</ul>
+     {% endfor %}
+</li>
+

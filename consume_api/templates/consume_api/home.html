@@ -1,0 +1,23 @@
+<h1>Bienvenido a la tarea 1</h1>
+
+<body>
+    <form action="{% url 'consume_api:search_result' %}" method="get">
+        <input type="text" name="query" placeholder="Buscar personaje...">
+        <button type="submit" name="button"> Buscar</button>
+    </form>
+</body>
+<!-- <button type="submit" onclick="location.href='breaking_bad'">
+    Presione aqui para breaking bad
+</button>
+<button type="submit" onclick="location.href='better_call'">
+    Presione aqui para better call saul
+</button> -->
+<h2>Temporadas de Breaking Bad:</h2>
+{% for temporada in temporadas_breaking %}
+<li><a href="{% url 'consume_api:breakingseason' temporada %}">Temporada {{temporada}}</a></li>
+{% endfor %}
+
+<h2>Temporadas de Bette Call Saul:</h2>
+{% for temporada in temporadas_saul %}
+<li><a href="{% url 'consume_api:saulseason' temporada %}">Temporada {{temporada}}</a></li>
+{% endfor %}

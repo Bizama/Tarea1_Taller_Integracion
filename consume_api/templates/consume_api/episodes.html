@@ -1,0 +1,9 @@
+<body>
+    <form action="{% url 'consume_api:search_result' %}" method="get">
+        <input type="text" name="query" placeholder="Buscar personaje...">
+        <button type="submit" name="button"> Buscar</button>
+    </form>
+</body>
+{% for episode in content %}
+<li><a href="{% url 'consume_api:episode' episode.episode_id %}">{{episode.title}}</a></li>
+{% endfor %}

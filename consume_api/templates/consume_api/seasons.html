@@ -1,0 +1,5 @@
+<ul>
+     {% for temporada in temporadas %}
+     <ul><a href="{% url 'consume_api:breakingseason' temporada %}"> Temporada {{ temporada }}</a></ul>
+    {% endfor %}
+</ul>

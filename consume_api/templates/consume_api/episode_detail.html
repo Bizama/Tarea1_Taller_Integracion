@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+<body>
+    <form action="{% url 'consume_api:search_result' %}" method="get">
+        <input type="text" name="query" placeholder="Buscar personaje...">
+        <button type="submit" name="button"> Buscar</button>
+    </form>
+</body>
+<h2> Detalles del episodio: </h2>
+<li>Temporada:  {{ season }}</li>
+<li>Fecha de estreno: {{ air_date }} </li>
+<li>Personajes: </li>
+{% for key, value in phone_book.items %}
+  <li><a href="{% url 'consume_api:Personaje' key %}">{{value}}</a></li>
+{% endfor %}
+<li>Numero episodio: {{ episode }}</li>
+<li>Serie: {{ series }}</li>
