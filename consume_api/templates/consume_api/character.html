@@ -11,19 +11,19 @@
 {% for oc in occupation %}
 <ul> {{ oc }} </ul>
 {% endfor %}
-<li> Status: {{ status }}</li>
-<li> Nickname: {{ nickname }}</li>
-<li> Appearances:</li>
+<li> Estado: {{ status }}</li>
+<li> Sobrenombre: {{ nickname }}</li>
+<li> Temporadas de breaking bad en las que aparece:</li>
 {% for ap in appearance%}
-<a href="{% url 'consume_api:breakingseason' ap %}"> {{ ap }}</a>
+<ul><a href="{% url 'consume_api:breakingseason' ap %}"> {{ ap }}</a></ul>
 {% endfor %}
-<li> portrayed: {{ portrayed }}</li>
-<li> category: {{ category }}</li>
-<li> better_call_saul_appearance:</li>
+<li> Actor: {{ portrayed }}</li>
+<li> Series en las que aparece: {{ category }}</li>
+<li> Temporadas de better call saul en las que aparece:</li>
 {% for aps in better_call_saul_appearance%}
-<a href="{% url 'consume_api:saulseason' aps %}"> {{ aps }}</a>
+<ul><a href="{% url 'consume_api:saulseason' aps %}"> {{ aps }}</a></ul>
 {% endfor %}
-<li> Quotes:
+<li> Citas:
     {% for quote in quotes%}
      <ul>{{ quote.quote }}</ul>
      {% endfor %}
